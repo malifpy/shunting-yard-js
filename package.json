@@ -1,0 +1,26 @@
+{
+  "name": "shunting-yard",
+  "version": "1.0.0",
+  "description": "Shunting Yard Algorithm in JavaScript",
+  "main": "./src/shuntingYard.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "node src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malifpy/shunting-yard-js.git"
+  },
+  "keywords": [],
+  "author": "Muhammad Alif Putra Yasa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malifpy/shunting-yard-js/issues"
+  },
+  "homepage": "https://github.com/malifpy/shunting-yard-js#readme",
+  "dependencies": {
+    "readline": "^1.3.0",
+    "xregexp": "^5.1.0"
+  }
+}
