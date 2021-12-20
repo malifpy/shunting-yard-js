@@ -28,5 +28,5 @@ Input Formula: 3 + 4 * 2 / (1 - 5) ^ 2 ^ 3
 
 ```
 Input Formula: sin (max (2, 3) / 3 * Pi)
-2 3 max 3 / pi * sin 
+2 3 max 3 / Pi * sin 
 ```

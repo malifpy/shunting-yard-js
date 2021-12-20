@@ -14,14 +14,14 @@ function mainAsk() {
   rl.question("Input Formula: ", (formula) => {
     if (!exit_keyword.includes(formula)) {
       let tokenFormula = tokenMachine(formula);
-      // let RPNFormula = shuntingYard(tokenFormula);
-      // RPNFormula.forEach(({ tokenVal }) => {
-      //   process.stdout.write(tokenVal + " ");
-      // });
-      // console.log();
-      tokenFormula.forEach(tokenInput => {
-        console.log(tokenInput);
+      let RPNFormula = shuntingYard(tokenFormula);
+      RPNFormula.forEach(({ tokenVal }) => {
+        process.stdout.write(tokenVal + " ");
       });
+      console.log();
+      // tokenFormula.forEach(tokenInput => {
+      //   console.log(tokenInput);
+      // });
       rl.close();
       mainAsk();
     } else {
