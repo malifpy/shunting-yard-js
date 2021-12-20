@@ -17,11 +17,6 @@ $ npm run main
 ## Examples
 
 ```
-Input Formula: 1 + 1
-1 1 + 
-```
-
-```
 Input Formula: 3 + 4 * 2 / (1 - 5) ^ 2 ^ 3
 3 4 2 * 1 5 - 2 3 ^ ^ / + 
 ```
@@ -29,4 +24,13 @@ Input Formula: 3 + 4 * 2 / (1 - 5) ^ 2 ^ 3
 ```
 Input Formula: sin (max (2, 3) / 3 * Pi)
 2 3 max 3 / Pi * sin 
+```
+
+```
+Input Formula: 1 * (9 + (8)
+node:internal/readline/emitKeypressEvents:71
+            throw err;
+            ^
+
+Error: Error: Missmatched Parentheses
 ```
