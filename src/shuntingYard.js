@@ -1,4 +1,4 @@
-import { prec, la } from "../lib/allLib.js";
+import { op_property } from "../lib/allLib.js";
 
 function shuntingYard(input_token) {
   let output_queue = [];
@@ -10,6 +10,7 @@ function shuntingYard(input_token) {
     let top_token = input_token.shift();
     switch (top_token.tokenType) {
       case "NUM":
+      case "CONST":
         output_queue.push(top_token);
         break;
       case "FUNC":
@@ -19,9 +20,11 @@ function shuntingYard(input_token) {
         while (
           op_stack.length !== 0 &&
           op_stack.at(-1).tokenType !== "LP" &&
-          (prec[op_stack.at(-1).tokenVal] > prec[top_token.tokenVal] ||
-            (prec[op_stack.at(-1).tokenVal] === prec[top_token.tokenVal] &&
-              la[top_token.tokenVal]))
+          (op_property[op_stack.at(-1).tokenVal].prec >
+            op_property[top_token.tokenVal].prec ||
+            (op_property[op_stack.at(-1).tokenVal].prec ===
+              op_property[top_token.tokenVal].prec &&
+              op_property[top_token.tokenVal].la))
         ) {
           output_queue.push(op_stack.pop());
         }

@@ -3,10 +3,16 @@ import { shuntingYard } from "./shuntingYard.js";
 import * as readline from "node:readline";
 import { stdin as input, stdout as output } from "process";
 
+const exit_keyword = [
+  "exit", 
+  "stop",
+  "quit"
+];
+
 function mainAsk() {
   const rl = readline.createInterface({ input, output });
   rl.question("Input Formula: ", (formula) => {
-    if (formula !== "Stop") {
+    if (!exit_keyword.includes(formula)) {
       let tokenFormula = tokenMachine(formula);
       let RPNFormula = shuntingYard(tokenFormula);
       RPNFormula.forEach(({ tokenVal }) => {
